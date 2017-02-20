@@ -17,3 +17,12 @@ Route::get('/', function()
 });
 
 Route::resource('nerds', 'NerdController');
+
+/* OLD ROUTING
+Route::get('login', array('uses'=>'HomeController@showLogin'));
+Route::post('login', array('uses'=>'HomeController@doLogin'));
+*/
+
+Route::get('login','SessionController@create');
+Route::get('logout','SessionController@destroy');
+Route::resource('session','SessionController');
